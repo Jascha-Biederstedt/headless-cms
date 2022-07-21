@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { PortableText } from '@portabletext/react';
 
 import { client } from 'lib/sanity';
 
@@ -57,7 +58,7 @@ const Post = ({ post }) => {
             <p className='mb-6 text-gray-400 uppercase text-sm'>
               {new Date(post.publishedAt).toDateString().slice(4)}
             </p>
-            <p>body</p>
+            <PortableText value={post.body} />
           </div>
         </div>
       </div>
